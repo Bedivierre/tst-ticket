@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {Box, Button, Container, Grid} from "@mui/material";
+import FilterBlock from "./components/FilterBlock";
+import Tickets from "./components/Tickets";
+import {getCompany} from "./helper";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box my={5}>
+      <Container maxWidth={"lg"}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Box display={'flex'} justifyContent={'center'}>
+              <img src={getCompany('qwerty-s7').logo} alt={'image'} />
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <FilterBlock />
+          </Grid>
+          <Grid item xs={12} md={9}>
+            <Tickets />
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 }
 
