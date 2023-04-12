@@ -25,7 +25,6 @@ const mockTickets = [
 
 function Tickets(props) {
   const tickets = props.tickets ?? mockTickets;
-  const filters = props.filters ?? {};
   const filterHandler = (item) => {
 
     return true
@@ -37,4 +36,6 @@ function Tickets(props) {
   );
 }
 
+const a = [1,2,3,4,5,6];
+const b = [1,2,3,];
 export default Tickets;
